@@ -1,8 +1,12 @@
-const react = require("react");
-const getName = require("../logic/util.js")
+const React = require("react");
+const util = require("../logic/util.js");
+const Clockface = require("./clockface.jsx");
 
 function PageRoot () {
-  return <h1>This is my page now. It belongs to {getName}</h1>
+  return <div><h1>This is my page now. It belongs to {util.getName("Klingon")}</h1>
+  <Clockface />
+  </div>
+
 }
 
 module.exports = PageRoot;
