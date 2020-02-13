@@ -15,9 +15,7 @@ function PageRoot () {
   }
   
   React.useEffect(() => {
-    setInterval(() => {
-      
-    });
+    setInterval(setTime, 1000);
   }, []);
   
   return <div><h1>This is my page now. It belongs to {util.getName("Klingon")}</h1>
