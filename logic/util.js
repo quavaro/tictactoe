@@ -1,7 +1,9 @@
-function getName() {
-  return "Nart";
+function getWinner() {
+  const tiles = document.getElementsbyTagName('button');
+  tiles.forEach(element => {console.log(element)});
+  
 }
 
 module.exports = {
-  getName: getName
+  getWinner: getWinner
 }
