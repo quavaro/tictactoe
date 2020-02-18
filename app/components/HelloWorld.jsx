@@ -1,7 +1,6 @@
 const React = require('react');
 const Board = require('./Board');
-
-import 'app/style.css';
+const Styles = require('app/style.css');
 
 const squarea = 9;
 
