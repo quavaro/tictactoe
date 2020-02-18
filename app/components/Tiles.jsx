@@ -12,7 +12,7 @@ const Tile = function({index, player, onBoardClick}) {
   }    
   else {
     return (
-      <button key={index}>{symbol}</button>
+      <button key={index} className={symbol}>{symbol}</button>
         );
   }
   
