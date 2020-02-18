@@ -14,7 +14,7 @@ const HelloWorld = function() {
   return (
     <div className="gameSpace">
       <div className="info">
-        <div className="turn">It's <span className={symbols[nextTurn]}>{symbols[nextTurn]}</span>'s turn to play.</div>
+        <div className="turn">It's {symbols[nextTurn]}'s turn to play.</div>
         <div className="winner"></div>
       </div>
       <div>
