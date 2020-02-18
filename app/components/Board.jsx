@@ -5,6 +5,7 @@ const Tile = require('./Tiles');
    with each item as <li> elements */
 const Board = function({ area }) {
   const [turn, setTurn] = React.useState(0);
+  
   let tiles = [];
   for(let i=0; i<area; i++){
     tiles.push(<Tile index={i} player={turn}  />);

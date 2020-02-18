@@ -1,11 +1,11 @@
 const React = require('react');
 
 const Tile = function({index, player}) {
-  
+  const [symbol, setSymbol] = React.useState(' ');
   const symbols = ['X','O'];
 
   return (
-    <button key={index}>{symbols[player]}</button>
+    <button key={index} onClick={() => setSymbol((turn+1)%2)}>{symbols[player]}</button>
       );
 }
 
