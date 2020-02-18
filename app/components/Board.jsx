@@ -5,19 +5,12 @@ const Tile = require('./Tiles');
    with each item as <li> elements */
 const Board = function({ area, turn, setTurn }) {
   let tiles = [];
-  let boardState = [];
-  const [symbol, setSymbol] = React.useState(' ');
-  const symbols = ['X','O'];
-
-  
   const handleBoardClick = function (event){
     setTurn();
   };
   for(let i=0; i<area; i++){
-    tiles.push(<Tile index={i} value={symbols[turn]} onBoardClick={handleBoardClick} />);
+    tiles.push(<Tile index={i} player={turn} onBoardClick={handleBoardClick} />);
   }
-      console.log(tiles);
-
   return (
     <div className="board">{tiles}</div>
   );
