@@ -3,16 +3,16 @@ const React = require('react');
 const Tile = function({index, player}) {
   
 
-  const [symbol, setSymbol] = React.useState(' ');
-  const symbols = ['X','O'];
-  if(symbol == ' '){
+  
+  
+  if(clicked == false){
     return (
-      <button key={index} onClick={() => {setSymbol(symbols[player])}}>{symbol}</button>
+      <button key={index} > </button>
         );
   }    
   else {
     return (
-      <button key={index}>{symbol}</button>
+      <button key={index}>{player}</button>
         );
   }
   
