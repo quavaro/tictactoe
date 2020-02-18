@@ -1,7 +1,9 @@
 function getWinner() {
-  const tiles = document.getElementsByTagName('button');
-  tiles.forEach(element => {console.log(element)});
-  
+  const tilesHTML = document.getElementsByTagName('button');
+  let tiles = []
+  for(let i=0; i<tilesHTML.length; i++){
+    tiles.push(tilesHTML[i].innerHTML);
+  }
 }
 
 module.exports = {
