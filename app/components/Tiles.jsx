@@ -1,7 +1,7 @@
 const React = require('react');
 
 const Tile = function({index, player}) {
-  const [turn, setTurn] = React.useState(0);
+  
 
   const [symbol, setSymbol] = React.useState(' ');
   const symbols = ['X','O'];
