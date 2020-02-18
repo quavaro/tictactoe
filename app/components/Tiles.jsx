@@ -1,7 +1,9 @@
 const React = require('react');
 
-const Tile = function({index, value, onBoardClick}) {
+const Tile = function({index, value, setValue, onBoardClick}) {
+    let symbols = ['X','O'];
   
+    setValue(value);
 
   
   if(value == ' '){
@@ -11,7 +13,7 @@ const Tile = function({index, value, onBoardClick}) {
   }    
   else {
     return (
-      <button key={index} className={symbol}>{value}</button>
+      <button key={index} className={value}>{value}</button>
         );
   }
   
