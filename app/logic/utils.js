@@ -10,11 +10,13 @@ else return ' ';
 
 function getWinner() {
   const tilesHTML = document.getElementsByTagName('button');
-  let tiles = []
+  let tiles = [];
+  let result;
   for(let i=0; i<tilesHTML.length; i++){
     tiles.push(tilesHTML[i].innerHTML);
   }
-  if(checkWinPath(tiles[0], tiles[1], tiles[2]) != ' '){
+  result = checkWinPath(tiles[0], tiles[1], tiles[2])
+  if(result != ' '){
     return tiles;
   }
 }
