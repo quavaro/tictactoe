@@ -9,13 +9,14 @@ else return ' ';
 }
 
 function getWinner() {
-  const tilesHTML = document.getElementsByTagName('button');
+  const board = document.getElementById('board');
+  const tilesHTML = board.getElementsByTagName('button');
   let tiles = [];
   let result;
   for(let i=0; i<tilesHTML.length; i++){
     tiles.push(tilesHTML[i].innerHTML);
   }
-  
+  console.log(tiles);
   result = checkWinPath(tiles[0], tiles[1], tiles[2])
   if(result != ' '){
     return tiles[0];
