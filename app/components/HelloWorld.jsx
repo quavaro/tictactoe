@@ -6,22 +6,29 @@ const squarea = 9;
 
 /* the main page for the index route of this app */
 const HelloWorld = function() {
+  
+  //state
   const [nextTurn, setNextTurn] = React.useState(0);
   const [winner, setWinner] = React.useState("Who will win in this epic battle of wills?");
 
-  
-  
   const symbols = ['X','O'];
-  const turnHandler = function() {
-      setNextTurn((nextTurn+1)%2);
-  }
+  let checkWinner;
+  
   const scoreHandler = function() {
-    const checkWinner = utils.getWinner();
+    checkWinner = utils.getWinner();
+    console.log(checkWinner);
     if(checkWinner){
       setWinner(checkWinner + ' WINS!');
-      setNextTurn(-1);
     }
   }
+  
+  const turnHandler = function() {
+    if(checkWinner){
+      setNextTurn(-1);
+    }
+    else setNextTurn((nextTurn+1)%2);
+  }
+  
   return (
     <div className="gameSpace">
       <div className="turn">
