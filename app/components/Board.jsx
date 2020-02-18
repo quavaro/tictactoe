@@ -11,8 +11,9 @@ const Board = function({ area, turn, setTurn }) {
   for(let i=0; i<area; i++){
     tiles.push(<Tile index={i} player={turn} onBoardClick={handleBoardClick} />);
   }
+  console.log(tiles);
   return (
-    <div className="board">{tiles}</div>
+    <div id="board">{tiles}</div>
   );
 }
 

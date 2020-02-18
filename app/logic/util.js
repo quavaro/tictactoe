@@ -1,7 +1,8 @@
-function getName() {
+function getWinner() {
+  const board = document.getElementByID('board');
   return "Nart";
 }
 
 module.exports = {
-  getName: getName
+  getWinner: getWinner
 }
