@@ -7,7 +7,7 @@ const Tile = function({index, player, onBoardClick}) {
   const symbols = ['X','O'];
   if(symbol == ' '){
     return (
-      <button key={index} onClick={() => {setSymbol(symbols[player]); console.log('child click'); onBoardClick();}}>{symbol}</button>
+      <button key={index} onClick={() => {setSymbol(symbols[player]); onBoardClick();}}>{symbol}</button>
         );
   }    
   else {
