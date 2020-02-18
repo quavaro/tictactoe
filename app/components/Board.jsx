@@ -1,9 +1,11 @@
 const React = require('react');
 const Tile = require('./Tiles');
+const utils = require("../logic/util.js");
 
 /* takes an array prop 'tiles' and returns a <ul> element 
    with each item as <li> elements */
 const Board = function({ area, turn, setTurn }) {
+  console.log(utils.getWinner());
   let tiles = [];
   const handleBoardClick = function (event){
     setTurn();
@@ -11,7 +13,6 @@ const Board = function({ area, turn, setTurn }) {
   for(let i=0; i<area; i++){
     tiles.push(<Tile index={i} player={turn} onBoardClick={handleBoardClick} />);
   }
-  console.log(tiles);
   return (
     <div id="board">{tiles}</div>
   );
