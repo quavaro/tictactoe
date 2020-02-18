@@ -14,7 +14,7 @@ function getWinner() {
   for(let i=0; i<tilesHTML.length; i++){
     tiles.push(tilesHTML[i].innerHTML);
   }
-  if(checkWinPath(tiles[0], tiles[1], tiles[2]) == ){
+  if(checkWinPath(tiles[0], tiles[1], tiles[2]) != ' '){
     return tiles;
   }
 }
