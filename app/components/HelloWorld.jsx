@@ -13,15 +13,13 @@ const HelloWorld = function() {
   
   const symbols = ['X','O'];
   const turnHandler = function() {
-    const checkWinner = utils.getWinner();
-    console.log(checkWinner);
-    if(checkWinner){
-      setWinner(`{checkWinner} WINS!`);
-      setNextTurn(-1);
-    }
-    else
-    {
       setNextTurn((nextTurn+1)%2);
+  }
+  const scoreHandler = function() {
+    const checkWinner = utils.getWinner();
+    if(checkWinner){
+      setWinner(checkWinner + ' WINS!');
+      setNextTurn(-1);
     }
   }
   return (
@@ -30,7 +28,7 @@ const HelloWorld = function() {
         It's <span className={symbols[nextTurn]}>{symbols[nextTurn]}</span>'s turn to play.
       </div>
       <div>
-        <Board area={squarea} turn={nextTurn} setTurn={turnHandler}/>
+        <Board area={squarea} turn={nextTurn} setTurn={turnHandler} checkWinner={scoreHandler}/>
       </div>
       <div className="winner">{winner}</div>
     </div>
