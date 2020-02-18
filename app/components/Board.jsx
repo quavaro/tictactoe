@@ -9,7 +9,7 @@ const Board = function({ area, turn, setTurn }) {
     setTurn();
   };
   for(let i=0; i<area; i++){
-    tiles.push(<Tile index={i} player={turn} onBoardClick={handleBoardClick} />);
+    tiles.push(<Tile index={i} valueplayer={turn} onBoardClick={handleBoardClick} />);
   }
   return (
     <div className="board">{tiles}</div>
