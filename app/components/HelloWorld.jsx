@@ -7,12 +7,13 @@ const squarea = 9;
 /* the main page for the index route of this app */
 const HelloWorld = function() {
   const [nextTurn, setNextTurn] = React.useState(0);
-  const [winner, setWinner] = React.useState("Who will win in this epic battle of wills?");
   
-
+  
+  
   const symbols = ['X','O'];
   const turnHandler = function() {
     setNextTurn((nextTurn+1)%2);
+    
   }
   return (
     <div className="gameSpace">
