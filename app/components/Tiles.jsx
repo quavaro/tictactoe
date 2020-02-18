@@ -1,14 +1,21 @@
 const React = require('react');
 
 const Tile = function({index, player}) {
-  //if(player)
+  const [turn, setTurn] = React.useState(0);
+
   const [symbol, setSymbol] = React.useState(' ');
-
   const symbols = ['X','O'];
-
-  return (
-    <button key={index} onClick={() => setSymbol(symbols[player])}>{symbol}</button>
-      );
+  if(symbol == ' '){
+    return (
+      <button key={index} onClick={() => {setSymbol(symbols[player])}}>{symbol}</button>
+        );
+  }    
+  else {
+    return (
+      <button key={index}>{symbol}</button>
+        );
+  }
+  
 }
 
 module.exports = Tile;
