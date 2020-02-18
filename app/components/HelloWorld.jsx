@@ -1,6 +1,6 @@
 const React = require('react');
 const Board = require('./Board');
-const utils = require("../logic/utils.js");
+const utils = require('../logic/utils.js');
 
 const squarea = 9;
 
