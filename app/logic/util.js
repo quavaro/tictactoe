@@ -1,5 +1,5 @@
 function getWinner() {
-  const board = document.getElementByID('board');
+  const board = document.getElementByTagName('board');
   return "Nart";
 }
 
