@@ -9,18 +9,19 @@ const HelloWorld = function() {
   
   //state
   const [nextTurn, setNextTurn] = React.useState(0);
-  const [winner, setWinner] = React.useState("Who will win in this epic battle of wills?");
-
-  const symbols = ['X','O'];
-  let checkWinner;
+  const [winner, setWinner] = React.useState("Who will win this epic battle of wills?");
   
-  const scoreHandler = function() {
-    checkWinner = utils.getWinner();
+  const symbols = ['X','O'];
+//   let checkWinner;
+  
+//   const scoreHandler = function() {
+    const checkWinner = utils.getWinner();
     console.log(checkWinner);
     if(checkWinner){
       setWinner(checkWinner + ' WINS!');
+      setNextTurn(-1);
     }
-  }
+  // }
   
   const turnHandler = function() {
     if(checkWinner){
@@ -35,7 +36,7 @@ const HelloWorld = function() {
         It's <span className={symbols[nextTurn]}>{symbols[nextTurn]}</span>'s turn to play.
       </div>
       <div>
-        <Board area={squarea} checkWinner={scoreHandler} turn={nextTurn} setTurn={turnHandler} />
+        <Board area={squarea} turn={nextTurn} setTurn={turnHandler} />
       </div>
       <div className="winner">{winner}</div>
     </div>

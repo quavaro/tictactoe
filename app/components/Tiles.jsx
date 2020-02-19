@@ -1,6 +1,6 @@
 const React = require('react');
 
-const Tile = function({index, player, winEvent, onBoardClick}) {
+const Tile = function({index, player, onBoardClick}) {
   
 
   const [symbol, setSymbol] = React.useState(' ');
@@ -14,7 +14,7 @@ const Tile = function({index, player, winEvent, onBoardClick}) {
             setSymbol(symbols[player]); 
         }
           onBoardClick();
-           winEvent();
+          // winEvent();
         }}>{symbol}</button>
         );
   }    
