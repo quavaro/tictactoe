@@ -17,8 +17,9 @@ const Board = function({ area, turn, setTurn, checkWinner}) {
     };
   
     let tileMarkup= [];
-     React.useEffect(() => {
-    checkWinner(tiles,values), 1000);  }, []);
+    React.useEffect(() => {
+    setInterval(() => checkWinner, 1000);
+  }, []);  
        
     for(let i=0; i<area; i++){
       let tileInQuestion = tiles.indexOf(i);
