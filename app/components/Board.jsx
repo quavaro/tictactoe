@@ -6,20 +6,20 @@ const utils = require('../logic/utils.js');
    with each item as <li> elements */
 const Board = function({ area, turn, setTurn, checkWinner}) {
     let tiles = [];
-    const [tilesSet, setTiles] = React.useState({0:' ',1:' ',2:' ',3:' ',4:' ',5:' ',6:' ',7:' ',8:' ',9:' '});
-
+    const [tilesSet, setTiles] = React.useState([{key, value}]);
     const symbols = ['X','O'];
     //const [symbol, setSymbol] = React.useState(' ');
 
     const handleBoardClick = function (event, index, symbol){
-      const i = index.toString();
+      // tiles = utils.getTileStates();
+      // tiles[index]=symbol;
       setTurn();  
-      setTiles(tilesSet[index] = symbol);
+      setTiles(tilesSet.concat([index],[symbol]));
       console.log(tilesSet);
     };
     let tileMarkup= [];
     for(let i=0; i<area; i++){
-      tileMarkup.push(<Tile index={i} symbol={tilesSet[i]} onBoardClick={handleBoardClick}  />);
+      tileMarkup.push(<Tile index={i} symbol={(tilesSet.indexOf(i)>-1) ?  : symbols[turn] } onBoardClick={handleBoardClick}  />);
     }
       return (
         <div id="board">
