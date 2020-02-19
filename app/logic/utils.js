@@ -8,14 +8,19 @@ function getTileStates(){
   return tiles;
 }
 
-function checkWinPath(tile1, tile2, tile3) {
-  if(tile1 == 'X' && tile2 == 'X' && tile3 == 'X'){
-    return 'X';
+function checkWinPaths(tiles) {
+  if(tiles.includes(0) && tiles.includes(1) && tiles.includes(2) || 
+    tiles.includes(3) && tiles.includes(4) && tiles.includes(5) || 
+    tiles.includes(6) && tiles.includes(7) && tiles.includes(8) || 
+    tiles.includes(0) && tiles.includes(3) && tiles.includes(6) || 
+    tiles.includes(0) && tiles.includes(4) && tiles.includes(8) || 
+    tiles.includes(1) && tiles.includes(4) && tiles.includes(7) || 
+    tiles.includes(2) && tiles.includes(5) && tiles.includes(8) || 
+    tiles.includes(2) && tiles.includes(4) && tiles.includes(6) )
+  {
+     return true;
   }
-  else if (tile1 == 'O' && tile2 == 'O' && tile3 == 'O'){
-    return 'O';
-  }
-else return ' ';
+  else return false;
 }
 
 function getWinner(tiles, values) {
@@ -38,44 +43,6 @@ function getWinner(tiles, values) {
     return 'O';
   }
   else return false;
-  
-  if(result != ' '){
-    return tiles[3];
-  }
-  
-  result = checkWinPath(tiles[0], tiles[1], tiles[2])
-  if(result != ' '){
-    return tiles[0];
-  }
-  
-  result = checkWinPath(tiles[6], tiles[7], tiles[8])
-  if(result != ' '){
-    return tiles[6];
-  }
-  
-  result = checkWinPath(tiles[0], tiles[3], tiles[6])
-  if(result != ' '){
-    return tiles[0];
-  }
-  
-  result = checkWinPath(tiles[1], tiles[4], tiles[7])
-  if(result != ' '){
-    return tiles[1];
-  }
-  
-  result = checkWinPath(tiles[2], tiles[5], tiles[8])
-  if(result != ' '){
-    return tiles[2];
-  }
-  result = checkWinPath(tiles[0], tiles[4], tiles[8])
-  if(result != ' '){
-    return tiles[0];
-  }
-  result = checkWinPath(tiles[2], tiles[4], tiles[6])
-  if(result != ' '){
-    return tiles[2];
-  }
-  return false;
 }
 
 module.exports = {
