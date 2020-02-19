@@ -13,10 +13,9 @@ const TicTac = function() {
   
   const symbols = ['X','O'];
 
-  
+  //check for winner and set turn if there is none yet
   const turnHandler = function(tiles, values) {
      const checkWinner = utils.getWinner(tiles, values);
-    console.log(checkWinner);
     if(checkWinner){
       setWinner(checkWinner + ' WINS!');
       setNextTurn(-1);

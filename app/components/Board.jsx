@@ -13,18 +13,20 @@ const Board = function({ area, turn, setTurn}) {
     const handleBoardClick = function (event, index, symbol){
       setTiles(tiles.concat(index));
       setValues(values.concat(symbols[turn]));
-      setTurn(tiles, values);  
     };
+  
     let tileMarkup= [];
+      
+    setTurn(tiles, values);    
     for(let i=0; i<area; i++){
       let tileInQuestion = tiles.indexOf(i);
       tileMarkup.push(<Tile index={i} symbol={(tileInQuestion>-1) ? values[tileInQuestion] : ' ' } onBoardClick={handleBoardClick}  />);
     }
-      return (
-        <div id="board">
-          {tileMarkup}
-        </div>
-      );
+    return (
+      <div id="board">
+      {tileMarkup}
+      </div>
+    );
 }
 
 module.exports = Board;
