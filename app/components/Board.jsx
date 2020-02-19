@@ -11,9 +11,11 @@ const Board = function({ area, turn, setTurn}) {
     //const [symbol, setSymbol] = React.useState(' ');
 
     const handleBoardClick = function (event, index, symbol){
-      setTiles(tiles.concat(index));
-      setValues(values.concat(symbols[turn]));
-      setTurn(tiles, values);  
+      if(tiles.indexOf(index)==-1){
+        setTiles(tiles.concat(index));
+        setValues(values.concat(symbols[turn]));
+        setTurn(tiles, values); 
+      }
     };
     let tileMarkup= [];
     for(let i=0; i<area; i++){
