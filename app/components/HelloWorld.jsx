@@ -20,6 +20,7 @@ const HelloWorld = function() {
     if(checkWinner){
       setWinner(checkWinner + ' WINS!');
     }
+    return checkWinner;
   }
   
   const turnHandler = function() {

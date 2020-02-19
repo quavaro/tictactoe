@@ -7,7 +7,7 @@ const utils = require('../logic/utils.js');
 const Board = function({ area, turn, setTurn, checkWinner }) {
     let tiles = [];
     const handleWin = function() {
-      checkWinner();
+      return checkWinner();
     }
     const handleBoardClick = function (event){
       setTurn();
