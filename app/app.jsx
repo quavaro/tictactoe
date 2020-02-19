@@ -3,6 +3,6 @@ const ReactDOM = require('react-dom');
 //import './style.css';
 
 /* Import Components */
-const HelloWorld = require('./components/HelloWorld');
+const TicTac = require('./components/TicTac');
 
-ReactDOM.render(<HelloWorld/>, document.getElementById('main'));
+ReactDOM.render(<TicTac/>, document.getElementById('main'));
