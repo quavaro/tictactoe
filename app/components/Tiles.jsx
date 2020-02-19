@@ -1,6 +1,6 @@
 const React = require('react');
 
-const Tile = function({index, player, winEvent, onBoardClick}) {
+const Tile = function({index, player, onBoardClick}) {
   
 
   const [symbol, setSymbol] = React.useState(' ');
@@ -8,14 +8,7 @@ const Tile = function({index, player, winEvent, onBoardClick}) {
   
   if(symbol == ' '){
     return (
-      <button key={index} onClick={() => { 
-         
-          if(player >= 0){
-            setSymbol(symbols[player]); 
-        }
-          onBoardClick();
-           winEvent();
-        }}>{symbol}</button>
+      <button key={index} onClick={() => {onBoardClick(); console.log(player);setSymbol(symbols[player]); }}>{symbol}</button>
         );
   }    
   else {
