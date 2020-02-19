@@ -11,11 +11,10 @@ const Board = function({ area, turn, setTurn, checkWinner }) {
     }
     const handleBoardClick = function (event){
       setTurn();
-      handleWin();
     };
     
     for(let i=0; i<area; i++){
-      tiles.push(<Tile index={i} player={turn} winEvent={handleWin} onBoardClick={handleBoardClick} />);
+      tiles.push(<Tile index={i} player={turn}  onBoardClick={handleBoardClick} winEvent={handleWin} />);
     }
     return (
       <div id="board">{tiles}</div>

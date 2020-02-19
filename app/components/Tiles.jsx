@@ -9,11 +9,12 @@ const Tile = function({index, player, winEvent, onBoardClick}) {
   if(symbol == ' '){
     return (
       <button key={index} onClick={() => { 
-          winEvent();
+         
           if(player >= 0){
             setSymbol(symbols[player]); 
         }
           onBoardClick();
+           winEvent();
         }}>{symbol}</button>
         );
   }    
