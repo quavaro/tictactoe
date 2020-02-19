@@ -5,7 +5,7 @@ const utils = require('../logic/utils.js');
 const squarea = 9;
 
 /* the main page for the index route of this app */
-const HelloWorld = function() {
+const TicTac = function() {
   
   //state
   const [nextTurn, setNextTurn] = React.useState(0);
@@ -37,4 +37,4 @@ const HelloWorld = function() {
   );
 }
 
-module.exports = HelloWorld;
+module.exports = TicTac;
