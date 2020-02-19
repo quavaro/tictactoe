@@ -13,21 +13,15 @@ const TicTac = function() {
   
   const symbols = ['X','O'];
 
-  //check for winner and set turn if there is none yet
-  const turnHandler = function() {
-    if(winner == "Who will win this epic battle of wills?"){
-      setNextTurn((nextTurn+1)%2);
-    }
-    else {
-      setNextTurn(-1);
-    }
-  }
   
-  const winHandler = (tiles, values) => {
-    const checkWinner = utils.getWinner(tiles, values);
+  const turnHandler = function(tiles, values) {
+     const checkWinner = utils.getWinner(tiles, values);
+    console.log(checkWinner);
     if(checkWinner){
       setWinner(checkWinner + ' WINS!');
+      setNextTurn(-1);
     }
+    else setNextTurn((nextTurn+1)%2);
   }
   
   return (
@@ -36,7 +30,7 @@ const TicTac = function() {
         It's <span className={symbols[nextTurn]}>{symbols[nextTurn]}</span>'s turn to play.
       </div>
       <div>
-        <Board area={squarea} turn={nextTurn} setTurn={turnHandler} checkWinner={winHandler}/>
+        <Board area={squarea} turn={nextTurn} setTurn={turnHandler} />
       </div>
       <div className="winner">{winner}</div>
     </div>

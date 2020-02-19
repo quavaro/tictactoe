@@ -1,3 +1,13 @@
+function getTileStates(){
+  const board = document.getElementById('board');
+  const tilesHTML = board.getElementsByTagName('button');
+  let tiles = [];
+  for(let i=0; i<tilesHTML.length; i++){
+    tiles.push(tilesHTML[i].innerHTML);
+  }
+  return tiles;
+}
+
 function checkWinPaths(tiles) {
   if(tiles.includes(0) && tiles.includes(1) && tiles.includes(2) || 
     tiles.includes(3) && tiles.includes(4) && tiles.includes(5) || 
@@ -37,4 +47,5 @@ function getWinner(tiles, values) {
 
 module.exports = {
   getWinner: getWinner,
+  getTileStates: getTileStates
 }
