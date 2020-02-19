@@ -6,12 +6,14 @@ const utils = require('../logic/utils.js');
    with each item as <li> elements */
 const Board = function({ area, turn, setTurn, checkWinner }) {
     let tiles = [];
-    const handleBoardClick = function (event){
-      setTurn();
-    };
     const handleWin = function() {
       checkWinner();
     }
+    const handleBoardClick = function (event){
+      setTurn();
+      handleWin();
+    };
+    
     for(let i=0; i<area; i++){
       tiles.push(<Tile index={i} player={turn} winEvent={handleWin} onBoardClick={handleBoardClick} />);
     }

@@ -5,9 +5,16 @@ const Tile = function({index, player, winEvent, onBoardClick}) {
 
   const [symbol, setSymbol] = React.useState(' ');
   const symbols = ['X','O'];
-  if(symbol == ' ' && player >= 0){
+  
+  if(symbol == ' '){
     return (
-      <button key={index} onClick={() => {setSymbol(symbols[player]); winEvent(); onBoardClick();}}>{symbol}</button>
+      <button key={index} onClick={() => { 
+          winEvent();
+          if(player >= 0){
+            setSymbol(symbols[player]); 
+        }
+          onBoardClick();
+        }}>{symbol}</button>
         );
   }    
   else {

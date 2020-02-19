@@ -19,7 +19,6 @@ const HelloWorld = function() {
     console.log(checkWinner);
     if(checkWinner){
       setWinner(checkWinner + ' WINS!');
-      turnHandler();
     }
   }
   
@@ -36,7 +35,7 @@ const HelloWorld = function() {
         It's <span className={symbols[nextTurn]}>{symbols[nextTurn]}</span>'s turn to play.
       </div>
       <div>
-        <Board area={squarea} turn={nextTurn} setTurn={turnHandler} checkWinner={scoreHandler}/>
+        <Board area={squarea} checkWinner={scoreHandler} turn={nextTurn} setTurn={turnHandler} />
       </div>
       <div className="winner">{winner}</div>
     </div>
