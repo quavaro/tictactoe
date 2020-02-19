@@ -12,19 +12,19 @@ const HelloWorld = function() {
   const [winner, setWinner] = React.useState("Who will win in this epic battle of wills?");
 
   const symbols = ['X','O'];
-  let checkWinner;
+  let winnerCheck;
   
   const scoreHandler = function() {
-    checkWinner = utils.getWinner();
-    console.log(checkWinner);
-    if(checkWinner){
-      setWinner(checkWinner + ' WINS!');
+    winnerCheck = utils.getWinner();
+    console.log(winnerCheck);
+    if(winnerCheck){
+      setWinner(winnerCheck + ' WINS!');
     }
-    return checkWinner;
+    return winnerCheck;
   }
   
   const turnHandler = function() {
-    if(checkWinner){
+    if(winnerCheck){
       setNextTurn(-1);
     }
     else setNextTurn((nextTurn+1)%2);
