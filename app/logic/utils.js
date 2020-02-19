@@ -18,13 +18,9 @@ function checkWinPath(tile1, tile2, tile3) {
 else return ' ';
 }
 
-function getWinner() {
+function getWinner(tiles, values) {
   let result;
-  let tiles = getTileStates();
-  result = checkWinPath(tiles[0], tiles[1], tiles[2])
-  if(result != ' '){
-    return tiles[0];
-  }
+  
   
   result = checkWinPath(tiles[3], tiles[4], tiles[5])
   if(result != ' '){

@@ -14,8 +14,8 @@ const TicTac = function() {
   const symbols = ['X','O'];
 
   
-  const turnHandler = function() {
-     const checkWinner = utils.getWinner();
+  const turnHandler = function(tiles, values) {
+     const checkWinner = utils.getWinner(tiles, values);
     console.log(checkWinner);
     if(checkWinner){
       setWinner(checkWinner + ' WINS!');
