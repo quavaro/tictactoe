@@ -1,3 +1,13 @@
+function getTileStates(){
+  const board = document.getElementById('board');
+  const tilesHTML = board.getElementsByTagName('button');
+  let tiles = [];
+  for(let i=0; i<tilesHTML.length; i++){
+    tiles.push(tilesHTML[i].innerHTML);
+  }
+  return tiles;
+}
+
 function checkWinPath(tile1, tile2, tile3) {
   if(tile1 == 'X' && tile2 == 'X' && tile3 == 'X'){
     return 'X';
@@ -9,14 +19,8 @@ else return ' ';
 }
 
 function getWinner() {
-  const board = document.getElementById('board');
-  const tilesHTML = board.getElementsByTagName('button');
-  let tiles = [];
   let result;
-  for(let i=0; i<tilesHTML.length; i++){
-    tiles.push(tilesHTML[i].innerHTML);
-  }
-  console.log(tiles);
+  let tiles = getTileStates();
   result = checkWinPath(tiles[0], tiles[1], tiles[2])
   if(result != ' '){
     return tiles[0];
@@ -63,5 +67,6 @@ function getWinner() {
 }
 
 module.exports = {
-  getWinner: getWinner
+  getWinner: getWinner,
+  getTileStates: getTileStates
 }
