@@ -20,9 +20,25 @@ else return ' ';
 
 function getWinner(tiles, values) {
   let result;
+  let xTiles= []
+  let oTiles= [];
+  for(let i=0;i<tiles.length; i++){
+    if(values[i]=='X') {
+      xTiles.push(tiles[i]);
+    }
+    else if(values[i]=='O') {
+      oTiles.push(tiles[i]);
+    }
+  }
   
+  if(checkWinPaths(xTiles)){
+    return 'X';
+  }
+  else if(checkWinPaths(oTiles)){
+    return 'O';
+  }
+  else return false;
   
-  result = checkWinPath(tiles[3], tiles[4], tiles[5])
   if(result != ' '){
     return tiles[3];
   }
